@@ -108,7 +108,7 @@ class MergeTest < Minitest::Test
         }
       }
     }
-    results = dtb_parse_file("./sample.dts_compiled")
+    results = dtb_parse_file("test/sample.dts_compiled")
     assert_equal(results.to_a, bench_mark.to_a)
   end
 
@@ -432,7 +432,7 @@ class MergeTest < Minitest::Test
            "#size-cells" => "<0x01>"
       }
     }
-    results = dtb_parse_file("./frdm_kw41z.dts_compiled")
+    results = dtb_parse_file("test/frdm_kw41z.dts_compiled")
     assert_equal(results.to_a, bench_mark.to_a)
   end
 
