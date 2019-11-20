@@ -155,7 +155,9 @@ class DTBParse < Rly::Yacc
   end
 
   rule 'expression : expression ":" expression' do |ex, e1, op, e2|
-    ex.value = {e1.value => e2.value}
+    #processing label with redundant
+    lh = {e1.value => e2.value.dup()}
+    ex.value = e2.value.merge!(lh)
     $log.info "rule e : e #{ex.value}"
   end
 
