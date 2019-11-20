@@ -1,6 +1,5 @@
 require 'awesome_print'
 require 'rly'
-require 'ruby_parser'
 require 'logger'
 require 'pathname'
 
@@ -22,7 +21,7 @@ class DTBLex < Rly::Lex
   end
 
 
-  token :COMMENTS, /\/\*[^*]+\*\// do |t|
+  token :COMMENTS, /\/\*((?!\/\*).)+\*\// do |t|
     t
   end
 
