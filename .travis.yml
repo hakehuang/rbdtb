@@ -3,7 +3,9 @@ rvm:
   - 2.6.0
 
 install:
-  - gem install rbdtb
+  - gem install awesome_print
+  - gem install rly 
+  - gem install logger
 
 before_install:
   - gem update --system
